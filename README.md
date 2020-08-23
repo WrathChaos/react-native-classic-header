@@ -1,48 +1,26 @@
-<img alt="React Native Typescript Library Starter" src="assets/logo.png" width="1050"/>
+<img alt="React Native Classic Header" src="assets/logo.png" width="1050"/>
 
-[![Battle Tested ✅](https://img.shields.io/badge/-Battle--Tested%20%E2%9C%85-03666e?style=for-the-badge)](https://github.com/WrathChaos/react-native-typescript-library-starter)
+[![Battle Tested ✅](https://img.shields.io/badge/-Battle--Tested%20%E2%9C%85-03666e?style=for-the-badge)](https://github.com/WrathChaos/react-native-classic-header)
 
-[![React Native Typescript Library Starter](https://img.shields.io/badge/-Extremely%20easy%20to%20create%20a%20React%20Native%20Component%20Library%20with%20both%20Stateful%20and%20Functional%20Component%20Examples-orange?style=for-the-badge)](https://github.com/WrathChaos/react-native-typescript-library-starter)
+[![React Native Classic Header](https://img.shields.io/badge/-Fully%20customizable%20Classic%20Header%20View%20for%20React%20Native-orange?style=for-the-badge)](https://github.com/WrathChaos/react-native-classic-header)
 
-[![npm version](https://img.shields.io/npm/v/react-native-typescript-library-starter.svg?style=for-the-badge)](https://www.npmjs.com/package/react-native-typescript-library-starter)
-[![npm](https://img.shields.io/npm/dt/react-native-typescript-library-starter.svg?style=for-the-badge)](https://www.npmjs.com/package/react-native-typescript-library-starter)
+[![npm version](https://img.shields.io/npm/v/react-native-classic-header.svg?style=for-the-badge)](https://www.npmjs.com/package/react-native-classic-header)
+[![npm](https://img.shields.io/npm/dt/react-native-classic-header.svg?style=for-the-badge)](https://www.npmjs.com/package/react-native-classic-header)
 ![Platform - Android and iOS](https://img.shields.io/badge/platform-Android%20%7C%20iOS-blue.svg?style=for-the-badge)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=for-the-badge)](https://github.com/prettier/prettier)
 
 <p align="center">
-  <img alt="React Native Typescript Library Starter"
-        src="assets/Screenshots/typescript.jpg" />
+  <img alt="React Native Classic Header"
+        src="assets/Screenshots/React-Native-Classic-Header.png" />
 </p>
-
-## Library Usage
-
-- `npm i`
-- Delete example folder
-- Delete build folder
-- Make your own library into the `lib` folder
-- Change package.json
-- Change README for your own documentation
-- `npm run build`
-
-```
-> react-native-typescript-library-starter@0.1.0 build /Users/kuray/Coursion/MyLibraries/ReactNative/react-native-typescript-library-starter
-> cd lib && tsc && cp ../package.json ../build/dist/ && Echo Build completed!
-
-Build completed!
-```
-
-- Test your build/dist into the new project
-- Finally, time to npm publish :)
-
-### Below part is for Documentation ! Remove above Library Usage
 
 # Installation
 
 Add the dependency:
 
 ```bash
-npm i react-native-typescript-library-starter
+npm i react-native-classic-header
 ```
 
 ## Peer Dependencies
@@ -52,6 +30,9 @@ npm i react-native-typescript-library-starter
 ```js
 "react": ">= 16.x.x",
 "react-native": ">= 0.55.x",
+"react-native-vector-icons": ">= 7.0.0",
+"react-native-dynamic-vector-icons": ">= 1.0.0",
+"@freakycoder/react-native-helpers": ">= 0.1.3"
 ```
 
 # Usage
@@ -59,32 +40,73 @@ npm i react-native-typescript-library-starter
 ## Import
 
 ```jsx
-import MyComponent from "react-native-typescript-library-starter";
+import ClassicHeader from "react-native-classic-header";
 ```
 
-## Fundamental Usage
+## Classic Header Usage
+
+### Basic Usage
 
 ```jsx
-<MyComponent />
+<ClassicHeader
+  headerTitle="Header"
+  rightComponentDisable
+  leftComponentOnPress={() => {}}
+  hitSlops={
+    top: 30,
+    bottom: 30,
+    left: 30,
+    right: 30
+  }
+/>
+```
+
+### Advanced Custom Usage
+
+```jsx
+<ClassicHeader
+  headerTitle="Header"
+  leftComponent={
+    <TouchableOpacity onPress={() => {}}>
+      <Icon name="ios-arrow-back" type="Ionicons" size={30} color="blue" />
+    </TouchableOpacity>
+  }
+  rightComponent={
+    <TouchableOpacity onPress={() => {}}>
+      <Icon name="github" type="AntDesign" size={30} color="purple" />
+    </TouchableOpacity>
+  }
+/>
 ```
 
 # Configuration - Props
 
-| Property |  Type   | Default | Description                                             |
-| -------- | :-----: | :-----: | ------------------------------------------------------- |
-| outline  | boolean |  true   | make the button outline                                 |
-| solid    | boolean |  false  | make the button with a solid background and a shadow    |
-| gradient | boolean |  false  | make the button with a gradient background and a shadow |
-| width    | number  |   150   | change the button's width                               |
+## Classic Header Props
+
+| Property              |   Type    |  Default   | Description                                                                  |
+| --------------------- | :-------: | :--------: | ---------------------------------------------------------------------------- |
+| styles                |  styles   |   styles   | use this to change main style of the header                                  |
+| height                |  number   |     50     | use this to change the header's height                                       |
+| width                 |  number   |    100%    | use this to change the header's width                                        |
+| statusBarHidden       |  boolean  |   false    | use this to let Header Component itself re-arrange depends on the status bar |
+| hitSlops              |  object   | object: 30 | use this to change the header's left and right components' hitSlots          |
+| bottomStick           |  boolean  |   false    | stick the header to bottom side                                              |
+| headerTitle           |  string   |     ""     | use this to set header's title                                               |
+| backgroundColor       |   color   |  #ffffff   | use this to change the header's background color                             |
+| leftComponent         | component |    Icon    | set the left component                                                       |
+| leftComponentStyle    |   style   |   style    | set the left component's style                                               |
+| leftComponentDisable  |  boolean  |   false    | disable the left component                                                   |
+| leftComponentOnPress  | function  |    null    | set the left component's onPress function                                    |
+| rightComponent        | component |    Icon    | set the right component                                                      |
+| rightComponentStyle   |   style   |   style    | set the right component's style                                              |
+| rightComponentDisable |  boolean  |   false    | disable the right component                                                  |
+| rightComponentOnPress | function  |    null    | set the right component's onPress function                                   |
+| centerComponent       | component |    Icon    | set the center component                                                     |
+| centerComponentStyle  |   style   |   style    | set the center component's style                                             |
 
 ## Future Plans
 
 - [x] ~~LICENSE~~
-- [ ] Write an article about the lib on Medium
-
-# Change Log
-
-Change log will be here !
 
 ## Author
 
@@ -92,4 +114,4 @@ FreakyCoder, kurayogun@gmail.com
 
 ## License
 
-React Native Typescript Library Starter is available under the MIT license. See the LICENSE file for more info.
+React Native Classic Header is available under the MIT license. See the LICENSE file for more info.
