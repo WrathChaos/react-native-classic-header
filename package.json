@@ -1,6 +1,6 @@
 {
   "name": "react-native-classic-header",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Fully customizable Classic Header View for React Native",
   "main": "./build/dist/ClassicHeader.js",
   "repository": "git@github.com:WrathChaos/react-native-classic-header.git",
@@ -37,7 +37,7 @@
     "react-native": ">= 0.55.x",
     "react-native-vector-icons": ">= 7.0.0",
     "react-native-dynamic-vector-icons": ">= 1.0.0",
-    "@freakycoder/react-native-helpers": ">= 0.1.3"
+    "@freakycoder/react-native-helpers": ">= 1.0.0"
   },
   "devDependencies": {
     "@types/react": "^16.9.22",

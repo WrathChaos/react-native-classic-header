@@ -32,7 +32,7 @@ npm i react-native-classic-header
 "react-native": ">= 0.55.x",
 "react-native-vector-icons": ">= 7.0.0",
 "react-native-dynamic-vector-icons": ">= 1.0.0",
-"@freakycoder/react-native-helpers": ">= 0.1.3"
+"@freakycoder/react-native-helpers": ">= 1.0.0"
 ```
 
 # Usage

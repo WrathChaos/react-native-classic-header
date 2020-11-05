@@ -1,5 +1,5 @@
 import { Platform, ViewStyle, TextStyle, StyleSheet } from "react-native";
-import { isIPhoneXFamily } from "@freakycoder/react-native-helpers";
+import { isIPhoneNotchFamily } from "@freakycoder/react-native-helpers";
 
 interface Style {
   titleTextStyle: TextStyle;
@@ -18,7 +18,7 @@ export function _container(
     ...Platform.select({
       ios: {
         top: 0,
-        height: isIPhoneXFamily
+        height: isIPhoneNotchFamily()
           ? height || 60
           : height || (statusBarHidden ? 50 : 70),
       },
@@ -38,7 +38,7 @@ export function _innerContainer(statusBarHidden: boolean): ViewStyle {
     justifyContent: "center",
     ...Platform.select({
       ios: {
-        top: isIPhoneXFamily ? 16 : statusBarHidden ? 0 : 24,
+        top: isIPhoneNotchFamily() ? 16 : statusBarHidden ? 0 : 24,
       },
       android: {
         top: statusBarHidden ? 16 : 24,

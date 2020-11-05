@@ -32,7 +32,6 @@ interface IProps {
   leftComponentStyle: any;
   statusBarHidden: boolean;
   rightComponentStyle: any;
-
   leftComponentDisable: boolean;
   rightComponentDisable: boolean;
   leftComponentOnPress: () => void;
