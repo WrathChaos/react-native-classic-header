@@ -1,6 +1,6 @@
 {
   "name": "react-native-classic-header",
-  "version": "0.1.2",
+  "version": "0.1.5",
   "description": "Fully customizable Classic Header View for React Native",
   "main": "./build/dist/ClassicHeader.js",
   "repository": "git@github.com:WrathChaos/react-native-classic-header.git",
