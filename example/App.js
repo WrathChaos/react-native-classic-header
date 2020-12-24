@@ -1,7 +1,6 @@
 import React from "react";
 import { StatusBar, SafeAreaView } from "react-native";
-// import ClassicHeader from "react-native-classic-header";
-import ClassicHeader from "./build/dist/ClassicHeader";
+import ClassicHeader from "react-native-classic-header";
 
 const App = () => {
   return (
