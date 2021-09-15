@@ -52,12 +52,12 @@ import ClassicHeader from "react-native-classic-header";
   headerTitle="Header"
   rightComponentDisable
   leftComponentOnPress={() => {}}
-  hitSlops={
+  hitSlops={{
     top: 30,
     bottom: 30,
     left: 30,
     right: 30
-  }
+  }}
 />
 ```
 
